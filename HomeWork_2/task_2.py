@@ -15,7 +15,7 @@ N = int(input('Введите положительное целое число: 
 # factorial = lambda x: x if x == 1 else x * factorial(x - 1)
 # print([factorial(i) for i in range(1, N + 1)])
 
-# ~~~ yeld ~~~
+# ~~~ yield ~~~
 
 def fact(N):
     last = 1
