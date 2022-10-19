@@ -6,7 +6,7 @@ def round_x(x, d_pow):
     return y
 str_decimal_x = str(round_x(x, d_pow)).split('.')[1]
 str_int_x = str(round_x(x, d_pow)).split('.')[0]
-len_x = len(str_int_x) + len(str_decimal_x[:d_pow + 1]) +1
+len_x = len(str_int_x) + len(str_decimal_x[:d_pow + 1]) + 1     # + 1 из-за присутствия точки
 print(len_x)
 print(str(d))
 print(str(round_x(x, d_pow + 1)).split('.')[1][d_pow:d_pow + 1])
