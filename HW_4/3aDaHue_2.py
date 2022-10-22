@@ -10,31 +10,25 @@ n = int(input('Введите какое-то натуральное число 
 # простые числа в отрезке [1; n] за O (ln ln n) операций.
 def primes(n):
     sieve = [True] * n
-    for i in range(3, int(n**0.5)+1, 2):# (корень из (n) + 1) не повлияет на
-                                        # асиптотику алгоритма, также ведём выборку 
-                                        # по нечётным числам начиная с 3
+    for i in range(3, int(n**0.5)+1, 2):
         if sieve[i]:
             sieve[i*i::2*i]=[False]*((n-i*i-1)//(2*i)+1)
-            # Если выражение (n-i*i-1)//(2*i)+1 !=0, то срез с началом i*i::с шагом 2*i
-            # будет возвращать список [False, False, ... , (n-i*i-1)//(2*i)+1 раз False]
-            # т.е. список sieve[True]*n заполняется [False] в местах,
-            # где не находятся простые числа
-        return [2] + [i for i in range(3,n,2) if sieve[i]]
+    return [2] + [i for i in range(3,n,2) if sieve[i]]
 print(primes(n))
 
 factors = []
 d = 2
 m = n               # Запомним исходное число
-#while d * d <= n:  # Можно тоже самое проделать и через while
-for d in primes(n + primes(n+3)[d]): # Но так, я думаю, эффективней
-    if n == d:
-        print('Это и есть простое число')
-        exit()
+# while d * d <= n: # Можно через while, но при помощи решета, думаю меньше шагов
+for d in primes(n + primes(n)[d]):
     if not(n % d):
         factors.append(d)
         n//=d
     else:
         d += 1
-factors.append(n)   # Добавим последнее простое число
-print('{} равно произведению чисел {}'.format(m, factors))  # Выводим исходное число
+# factors.append(n)   # Добавим последнее простое число при цикле while
+if len(factors) == 1:
+    print('Это и есть простое число')
+else:
+    print('{} равно произведению чисел {}'.format(m, factors))  # Выводим исходное число
                                                             # и все простые множители.
