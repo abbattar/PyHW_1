@@ -9,27 +9,16 @@ lis_t_filt = list(set(lis_t))   # Способ, при котором не то�
 # последовательность => от меньшего к большему
 print(lis_t_filt)
 
-# 2 cпособа при которых не теряется сортировка исходного списка
+n = []
+for i in lis_t:
+    if i not in n:
+        n.append(i)
 
+number_list = list(map(int, lis_t))
+lis_t = [i for i in n if number_list.count(i) == 1]
+# for i in range(0,len(n)):
+#     if n[i] in lis_t:
+#         lis_t.pop(i)
 
-def f(li_st):
-    n = []
-    for i in li_st:
-        if i not in n:
-            n.append(i)
-    return n
-
-
-print(f(lis_t))
-
-
-def unique(obj: iter):
-    args = []
-    for a in obj:
-        if a not in args:
-            args.append(a)
-            yield a
-
-
-r = unique(lis_t)
-print([*r])
+print(n)
+print(lis_t)
