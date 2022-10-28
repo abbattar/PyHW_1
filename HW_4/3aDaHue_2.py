@@ -41,7 +41,7 @@ while d*d <= n:
     else:
         d += 1
 factors.append(n)
-# if len(factors) == 1:
-#     print('Это и есть простое число')
-# else:
-print('{} равно произведению чисел {}'.format(m, factors))
+if len(factors) == 1:
+    print('Это и есть простое число')
+else:
+    print('{} равно произведению чисел {}'.format(m, factors))

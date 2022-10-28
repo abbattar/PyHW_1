@@ -18,10 +18,10 @@ print(f'Второй многочлен: {record2}')
 
 x = Symbol('x')
 
-result = str(collect(record1 + ' + ' record2, x))
+result = str(collect(record1 + ' + ' + record2, x))
 result = result.replace('**', '^')
 result = result.replace('*', '')
 result = result + ' = 0'
 
-with open('./HW_4/polinome3.txt', 'W') as data3:
+with open('./HW_4/polinome3.txt', 'w') as data3:
     data3.write(result)
