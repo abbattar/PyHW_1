@@ -85,7 +85,7 @@ def sum(expr):
     if op == "-":
         return numb1 - numb2, rest2
 
-    return expr
+    return None, expr
 
 def term(expr):
     return sum(expr)
