@@ -90,5 +90,5 @@ def sum(expr):
 def term(expr):
     return sum(expr)
 
-h = input('Введит математическое выражение: ')
+h = input('Введите математическое выражение: ')
 print(term(h))
