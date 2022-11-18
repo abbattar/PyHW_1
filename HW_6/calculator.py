@@ -106,7 +106,6 @@ actions = {
 priority_reg_exp = r"\((.+?)\)"
 action_reg_exp = r"(-?\d+(?:\.\d+)?)\s*\{}\s*(-?\d+(?:\.\d+)?)"
 
-
 def my_eval(expresion: str) -> str:
     while (match := re.search(priority_reg_exp, expresion)):
         expresion: str = expresion.replace(match.group(0), my_eval(match.group(1)))

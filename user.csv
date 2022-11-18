@@ -1,0 +1,5 @@
+0 id name Денис second_name Коломец workplace Москва birsday 31.08.1981 telephone_number ['2345', '456']
+1 id name П second_name К workplace М birsday 34 telephone_number ['456', '345']
+2 id name И second_name З workplace Т birsday 23 telephone_number ['3456', '567']
+0 id name Gj second_name Joi workplace Fdr birsday 34 telephone_number ['123', '4234']
+1 id name Ui second_name Mui workplace Loi birsday 45 telephone_number ['4567', '678', '89']
