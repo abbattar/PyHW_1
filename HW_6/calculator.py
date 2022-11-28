@@ -106,15 +106,15 @@ actions = {
 priority_reg_exp = r"\((.+?)\)"
 action_reg_exp = r"(-?\d+(?:\.\d+)?)\s*\{}\s*(-?\d+(?:\.\d+)?)"
 
-def my_eval(expresion: str) -> str:
-    while (match := re.search(priority_reg_exp, expresion)):
-        expresion: str = expresion.replace(match.group(0), my_eval(match.group(1)))
+def my_eval(expression: str) -> str:
+    while (match := re.search(priority_reg_exp, expression)):
+        expression: str = expression.replace(match.group(0), my_eval(match.group(1)))
 
     for symbol, action in actions.items():
-        while (match := re.search(action_reg_exp.format(symbol), expresion)):
-            expresion: str = expresion.replace(match.group(0), action(*match.groups()))
+        while (match := re.search(action_reg_exp.format(symbol), expression)):
+            expression: str = expression.replace(match.group(0), action(*match.groups()))
 
-    return expresion
+    return expression
 
 exp = input('Введите математическое выражение: ')
 print(my_eval(exp), eval(exp))

@@ -7,10 +7,10 @@ def convert(line):
     line = line.replace('^', '**')
     line = line[:-4:]
     return line
-with open('./HW_4/polinome1.txt', 'r') as data1:
+with open('E:\Moi_Dokumenty\Practics\Python\Home_work\HW_4\polinome1.txt', 'r') as data1:
     record1 = data1.readline()
 
-with open('./HW_4/polinome2.txt', 'r') as data2:
+with open('E:\Moi_Dokumenty\Practics\Python\Home_work\HW_4\polinome2.txt', 'r') as data2:
     record2 = data2.readline()
 
 print(f'Первый многочлен: {record1}')
@@ -23,5 +23,5 @@ result = result.replace('**', '^')
 result = result.replace('*', '')
 result = result + ' = 0'
 
-with open('./HW_4/polinome3.txt', 'w') as data3:
+with open('E:\Moi_Dokumenty\Practics\Python\Home_work\HW_4\polinome3.txt', 'w') as data3:
     data3.write(result)
